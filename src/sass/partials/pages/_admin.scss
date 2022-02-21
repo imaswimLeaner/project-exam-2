@@ -1,0 +1,60 @@
+/* Banner & Content */
+.banner__admin {
+  background-image: url(../../../images/admin.jpg);
+  height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      color: $colour-white;
+      text-align: center;
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5em;
+      color: $colour-white;
+      font-weight: 300;
+      text-transform: uppercase;
+      border-bottom: 1px solid $colour-white;
+      padding: 1em 0 0.2em 0;
+      margin-bottom: 0.5em;
+
+      &:hover {
+        text-decoration: none;
+        color: $colour-white-translucent;
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+  .banner__admin__content a {
+    width: 300px;
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .banner__admin__content a {
+    width: 380px;
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .banner__admin__content a {
+    width: 400px;
+  }
+}

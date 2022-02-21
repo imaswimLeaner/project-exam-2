@@ -1,0 +1,93 @@
+/* Banner & Content */
+.login {
+  background-image: linear-gradient(rgba(83, 83, 84, 0.9), rgba(189, 190, 193, 0.6)), url(../../../images/contact2.jpg) ;
+  height: 93vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $colour-white;
+
+    h1 {
+      text-align: center;
+    }
+
+    &__form {
+      margin-top: 1.5em;
+
+      .form-group {
+        margin-bottom: 1.5em;
+      }
+
+      .form-label {
+        text-transform: uppercase;
+      }
+
+      .form-control {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        border-bottom: 2px solid $colour-white;
+        color: $colour-white;
+
+        &:focus {
+          color: $colour-white;
+          background: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+
+      ::placeholder {
+        color: $colour-white;
+      }
+
+      &__btn {
+        background: $colour-accent;
+        font-size: 1.1em;
+        color: $colour-text;
+        padding: 0.6em;
+        border: none;
+        border-radius: 2px;
+        width: 100%;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 1em;
+
+        &:hover {
+          text-decoration: none;
+          background: $colour-ui-hover;
+          transition: background 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+  .login__content {
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .login__content {
+    width: 360px;
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .login__content {
+    width: 360px;
+  }
+}

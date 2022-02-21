@@ -1,0 +1,19 @@
+// Base
+@import "partials/base/globals";
+@import "partials/base/typography";
+
+// Layout
+@import "partials/layout/layout";
+@import "partials/layout/nav";
+@import "partials/layout/footer";
+
+// Pages
+@import "partials/pages/home";
+@import "partials/pages/accommodations";
+@import "partials/pages/details";
+@import "partials/pages/enquiry";
+@import "partials/pages/contact";
+@import "partials/pages/login";
+@import "partials/pages/admin";
+@import "partials/pages/admin-pages";
+@import "partials/pages/admin-add";

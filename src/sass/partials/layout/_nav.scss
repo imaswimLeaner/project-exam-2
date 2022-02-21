@@ -1,0 +1,87 @@
+/* Navigation Bar */
+.navbar {
+  background-color: $colour-background;
+  
+
+  .navbar-nav .nav-link {
+    color: $colour-ui-primary;
+    font-weight: 300;
+    font-size: 1.2em;
+    position: left;
+
+    &.active {
+      font-weight: 400;
+      color: $colour-ui-primary;
+    }
+
+    &:hover {
+      color: $colour-ui-shadow;
+    }
+  }
+
+  .navbar-toggler {
+    background: $colour-background;
+  }
+}
+/*_____________________*/
+
+/* Sign Out Button */
+.signout-btn {
+  color: $colour-text;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 300;
+
+  .icon {
+    padding-left: 0.5em;
+  }
+
+  &:hover {
+    background: $colour-accent;
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $small-tablet-width) {
+  .navbar {
+    .nav-link {
+      margin: 0.7em 0 0.7em 0;
+      padding-left: 0.5em;
+    }
+
+    &__logo {
+      width: 5.85em;
+    }
+  }
+}
+
+@media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
+  .navbar {
+    padding: 0.5em 5em;
+    padding-left: 0.5em;
+
+    &__logo {
+      width: 7.25em;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .navbar {
+    padding: 0.6em 5em;
+
+    .nav-link {
+      margin-left: 1.5em;
+    }
+
+    &__logo {
+      width: 9em;
+    }
+  }
+
+  .signout-btn {
+    margin-left: 1em;
+  }
+}

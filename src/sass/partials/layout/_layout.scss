@@ -1,0 +1,49 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  min-width: 85%;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $colour-background;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+/* Loader */
+.spinner-border {
+  width: 13em;
+  display: block;
+  margin: 2em auto;
+  color: $colour-text;
+  height: 13em;
+}
+/*_____________________*/
+
+/* Form Error Msg */
+.form-error {
+  font-style: italic;
+  color: #ff5e00;
+  margin-top: 0.5em;
+}
+/*_____________________*/
+

@@ -1,0 +1,331 @@
+/* Hero Banner */
+.hero-banner {
+  background-image: linear-gradient(rgba(83, 83, 84, 0.9), rgba(120, 121, 123, 0.6)), url(../../../images/floien.jpg);
+  height: 93vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+
+  &__content {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__text {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+
+      h2 {
+        color: $colour-white;
+      }
+
+      .icon {
+        color: $colour-white-translucent;
+        font-size: 1.7em;
+        padding-left: 0.5em;
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Search bar */
+.search-bar {
+  font-size: 1em;
+
+  input {
+    display: block;
+    margin: 0 auto;
+    padding: 0.65em;
+    border-radius: 2px;
+    background: #ffffffd8;
+    border: none;
+    outline: none;
+  }
+
+  &__results__list {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      color: $colour-text;
+
+      img {
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        filter: brightness(80%);
+        color: $colour-text;
+        text-decoration: none;
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Scroll Down Animation */
+.arrow {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  z-index: 0;
+  width: 3em;
+  height: 3em;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-left: none;
+  border-top: none;
+  // border-right: 2px $colour-white solid;
+  // border-bottom: 2px $colour-white solid;
+  animation: arrow 2.2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+    bottom: 2em;
+  }
+  100% {
+    opacity: 0;
+    bottom: 0em;
+  }
+}
+/*_____________________*/
+
+/* Home Main */
+.home {
+  .image-container {
+    display: flex;
+  }
+
+  &__button {
+    display: block;
+    padding: 3em 0;
+    text-align: center;
+    background: $colour-accent;
+    color: $colour-text;
+    font-size: 2em;
+    border-radius: 3px;
+
+    &:hover {
+      background: $colour-ui-hover;
+      transition: background 0.4s ease-in-out;
+      color: $colour-text;
+      text-decoration: none;
+    }
+
+    &__icon {
+      font-size: 0.75em;
+      color: $colour-text;
+      padding-left: 1em;
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+  .hero-banner__content h2,
+  .home__button {
+    font-size: 1.75em;
+  }
+
+  .hero-banner__content {
+    min-width: 290px;
+
+    .search-bar {
+      input {
+        min-width: 290px;
+      }
+
+      &__results__list {
+        min-width: 290px;
+
+        &__item {
+          img {
+            width: 6em;
+            height: 6em;
+          }
+
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }
+
+  .home {
+    margin: 4em auto;
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    &__button {
+      margin-top: 1.5em;
+      font-size: 1.45em;
+    }
+  }
+
+  .image-container {
+    &__inner__img {
+      width: 100%;
+      height: auto;
+      border-radius: 3px;
+      margin-top: 2em;
+    }
+
+    &__inner--second {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .hero-banner__content h2,
+  .home__button {
+    font-size: 1.9em;
+  }
+
+  .hero-banner__content {
+    width: 310px;
+
+    .search-bar {
+      input {
+        width: 310px;
+      }
+
+      &__results__list {
+        width: 310px;
+
+        &__item {
+          img {
+            width: 6em;
+            height: 6em;
+          }
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }
+
+  .home {
+    margin: 4em auto;
+
+    &__button {
+      margin-top: 1.5em;
+    }
+  }
+
+  .image-container {
+    &__inner__img {
+      width: 100%;
+      height: auto;
+      border-radius: 3px;
+      margin-top: 2em;
+    }
+
+    &__inner--second {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .hero-banner__content h2,
+  .home__button {
+    font-size: 2em;
+  }
+
+  .hero-banner__content {
+    width: 320px;
+
+    .search-bar {
+      input {
+        width: 320px;
+      }
+
+      &__results__list {
+        width: 320px;
+
+        &__item {
+          img {
+            width: 7em;
+            height: 7em;
+          }
+
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }
+
+  .home {
+    margin: 6em auto;
+
+    &__button {
+      margin-top: 3em;
+    }
+  }
+  .paragraph-container{
+    text-align: center;
+    padding: 10px 20px;
+  }
+  .image-container {
+    &__inner {
+      flex: 1;
+
+      &--first {
+        margin-top: 10em;
+        margin-right: 2em;
+      }
+
+      &--second {
+        margin-left: 2em;
+        margin-top: 2em;
+        margin-bottom: 8em;
+      }
+
+      &__img {
+        width: 100%;
+        background-color: rgb(225, 222, 222);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+      }
+      
+      &__img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+
+
+      }
+    }
+  }
+

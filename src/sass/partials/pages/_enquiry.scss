@@ -1,0 +1,142 @@
+/* Booking Enquiry - MODAL */
+.enquiry {
+  .modal-content {
+    padding: 2.5em;
+    background: $colour-background;
+  }
+
+  .modal-header {
+    padding: 0;
+  }
+
+  .modal-header {
+    border-bottom: none;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid $colour-border;
+    padding: 1em 0 0 0;
+
+    &__link {
+      color: $colour-text;
+      width: 100%;
+      text-align: right;
+
+      &:hover {
+        color: $colour-text;
+      }
+
+      .icon {
+        padding-left: 0.5em;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  .modal-footer {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__form {
+    margin-top: 1.5em;
+
+    .form-group {
+      margin-bottom: 2em;
+    }
+
+    .form-label {
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      border-bottom: 2px solid $colour-border;
+
+      &:focus {
+        background: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &__btn {
+      background: $colour-accent;
+      font-size: 1.1em;
+      color: $colour-text;
+      padding: 0.6em;
+      border: none;
+      border-radius: 2px;
+      width: 100%;
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1em;
+
+      &:hover {
+        text-decoration: none;
+        background: $colour-ui-hover;
+        transition: background 0.4s ease-in-out;
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+  .enquiry {
+    .modal-dialog {
+      margin: 3.5em auto;
+    }
+
+    h1 {
+      font-size: 1.6em;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .enquiry {
+    .modal-dialog {
+      margin: 4em auto;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .enquiry {
+    .modal-dialog {
+      margin: 4em auto;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.15em;
+    }
+  }
+}

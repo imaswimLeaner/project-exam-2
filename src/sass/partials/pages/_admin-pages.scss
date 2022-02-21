@@ -1,0 +1,118 @@
+/* Banner */
+.banner__enquiries,
+.banner__entries {
+  background-image: url(../../../images/admin.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 18vh;
+
+  &__content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      text-align: center;
+      color: $colour-white;
+    }
+  }
+}
+/*_____________________*/
+
+/* Enquiries & Entries */
+.enquiries,
+.entries {
+  margin: 2em auto 3em auto;
+
+  &__results__row__acc {
+    padding: 1em;
+    border: none;
+
+    &__card {
+      background: $colour-white-translucent;
+      color: $colour-text;
+      border: none;
+      -webkit-box-shadow: 3px 3px 5px 1px $colour-border;
+      box-shadow: 3px 3px 5px 1px $colour-border;
+      border-radius: 2px;
+
+      &__header {
+        background: $colour-white-translucent;
+        text-transform: uppercase;
+        padding: 1.5em;
+
+        p {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      &__body {
+        h3 {
+          font-family: $font-secondary;
+          text-transform: uppercase;
+          font-size: 1.15em;
+          padding-bottom: 0.2em;
+        }
+
+        p {
+          margin-bottom: 2em;
+          padding-bottom: 0.3em;
+        }
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Buttons */
+.btns {
+  display: flex;
+  justify-content: space-between;
+
+  .btn {
+    text-transform: uppercase;
+    padding: 1em 0;
+    width: 45%;
+  }
+
+  &__accept {
+    background: $colour-accent;
+
+    &:hover {
+      background: $colour-ui-hover;
+    }
+  }
+
+  &__delete {
+    background: #cc8f8f;
+
+    &:hover {
+      background: #b47373;
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+
+}
+
+@media only screen and (min-width: $desktop-width) {
+
+}
+
+@media only screen and (min-width: $big-desktop-width) {
+  .enquiries, .entries {
+    min-width: 60%;
+  }
+}

@@ -1,0 +1,138 @@
+/* Banner */
+.banner__add-page {
+  background-image: url(../../../images/admin.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 18vh;
+
+  &__content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      text-align: center;
+      color: $colour-white;
+    }
+  }
+}
+/*_____________________*/
+
+/* Add Establishment Form */
+.add-page {
+  margin: 3em auto 3em auto;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    color: $colour-text;
+
+    &__group--left {
+      flex: 1;
+      background: $colour-white-translucent;
+      -webkit-box-shadow: 3px 3px 5px 1px $colour-border;
+      box-shadow: 3px 3px 5px 1px $colour-border;
+      padding: 2em;
+    }
+
+    &__group--right {
+      flex: 1;
+    }
+
+    .form-group {
+      padding-bottom: 1.5em;
+    }
+
+    .form-label,
+    .form-file-label {
+      text-transform: uppercase;
+      font-size: 1.15em;
+    }
+
+    .form-control-file {
+      color: $colour-ui-shadow;
+      max-width: fit-content;
+    }
+
+    .checkbox-text {
+      margin: 0.25em 0 0.25em 0;
+      font-size: 0.85em;
+    }
+
+    .form-control {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      border-bottom: 2px solid $colour-border;
+
+      &:focus {
+        background: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      text-transform: uppercase;
+      padding: 0.8em;
+      color: $colour-text;
+      background: $colour-accent;
+      border: none;
+      border-radius: 2px;
+
+      &:hover {
+        background: $colour-ui-hover;
+        transition: background 0.4s ease-in-out;
+      }
+    }
+  }
+}
+/*_____________________*/
+
+/* Media Queries */
+@media only screen and (max-width: $small-tablet-width) {
+  .add-page__form {
+    flex-direction: column;
+
+    &__group--left {
+      width: 90%;
+    }
+
+    &__group--right {
+      margin-top: 3em;
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
+  .add-page__form {
+    flex-direction: row;
+
+    &__group--right {
+      margin-left: 3em;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .add-page__form {
+    flex-direction: row;
+
+    &__group--right {
+      margin-left: 5em;
+    }
+  }
+}
+
+@media only screen and (min-width: $big-desktop-width) {
+  .add-page {
+    min-width: 60%;
+  }
+}
