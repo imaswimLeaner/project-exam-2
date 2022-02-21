@@ -1,4 +1,5 @@
-import { useState, useEffect, React} from "react";
+import { useState, useEffect, } from "react";
+import React from 'react';
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -7,7 +8,7 @@ import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
 import Heading from "../common/Heading";
 import Enquiry from "./enquiry/Enquiry";
-import Breadcrumb from "react-bootstrap/Breadcrumb"
+// import Breadcrumb from "react-bootstrap/Breadcrumb"
 
 export default function Details() {
   // modal for booking enquiry
@@ -42,7 +43,8 @@ export default function Details() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (fetchEstablishment) return <Loader />;
+	if (fetchEstablishment)
+		return <Loader />;
 
   if (fetchError)
     return (
@@ -60,12 +62,12 @@ export default function Details() {
 				<Heading size="1" content={establishment.name} />
 			</div>
 			<Container className="details__return-link">
-				<Breadcrumb className="breadItem">
+				{/* <Breadcrumb className="breadItem">
 					<Breadcrumb.Item href="/accommodation">
 						Accommodations
 					</Breadcrumb.Item>
 					<Breadcrumb.Item>Detail</Breadcrumb.Item>
-				</Breadcrumb>
+				</Breadcrumb> */}
 				<Link to="/accommodations" className="details__return-link">
 					<i className="fas fa-chevron-left icon"></i>Return
 				</Link>
@@ -73,7 +75,7 @@ export default function Details() {
 					<div className="details__card__img-container">
 						<img
 							className="details__card__img-container__img"
-							src={establishment.url}
+							src={establishment.image.url}
 							alt={establishment.name}
 						/>
 					</div>

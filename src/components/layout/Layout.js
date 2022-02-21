@@ -11,9 +11,11 @@ import Details from "../accommodations/Details";
 import Contact from "../contact/Contact";
 import Login from "../login/Login";
 import Admin from "../admin/Admin";
-// import Enquiries from "../admin/pages/enquiries/Enquiries";
+import Enquiries from "../admin/pages/enquiries/Enquiries";
 import Entries from "../admin/pages/entries/Entries";
 import AddPage from "../admin/pages/addEstablishment/AddPage";
+// import ProtectedRoute from '../route/ProtectedRoute';
+
 
 export default function Layout() {
   return (
@@ -32,10 +34,17 @@ export default function Layout() {
 							<Route path="/accommodations/:id" element={<Details />} />
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/login" element={<Login />} />
-							<Route path="/admin"  element={<Admin />} />
-							{/* <Route path="/admin/enquiries" element={<Enquiries />} /> */}
-							<Route path="/admin/entries" element={<Entries />} />
-							<Route path="/admin/add-establishment" element={<AddPage />} />
+							<Route path="/admin" element={<Admin />} />
+							
+						  	<Route
+								path="/admin/enquiries"
+								component={<Enquiries />}
+							/>
+							<Route path="/admin/entries" component={<Entries />} />
+							<Route
+								path="/admin/add-establishment"
+								component={<AddPage />}
+							/>
 						</Routes>
 					</div>
 					<Footer />

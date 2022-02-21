@@ -32,9 +32,17 @@ export default function AddEstab() {
 
   const http = useAxios();
 
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
+  // const { register, handleSubmit, errors } = useForm({
+  //   resolver: yupResolver(schema),
+  // });
+  const {
+		register,
+		handleSubmit,
+		
+		formState: { errors },
+	} = useForm({
+		resolver: yupResolver(schema),
+	});
 
   async function onSubmit(data) {
     setAdding(true);

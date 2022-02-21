@@ -33,15 +33,19 @@ const schema = yup.object().shape({
 export default function Enquiry(props) {
   const [establishment, setEstablishment] = useState({});
   let { id } = useParams();
-  const estabUrl = BASE_URL + `booking/${id}`;
+  const estabUrl = BASE_URL + `bookings/${id}`;
 
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const url = BASE_URL + "enquiries/";
 
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm({
+		resolver: yupResolver(schema),
+	});
 
   useEffect(function () {
     async function getEstab() {

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import React from 'react';
 import Container from "react-bootstrap/Container";
 import Heading from "../../../common/Heading";
 import EnquiriesList from "./EnquiriesList";

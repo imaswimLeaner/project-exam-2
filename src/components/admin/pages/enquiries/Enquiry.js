@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import React from 'react';
 import dateFormat from "dateformat";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";

@@ -46,9 +46,18 @@ const schema = yup.object().shape({
 export default function ContactForm() {
 	const [sending, setSending] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
-	const url = BASE_URL + 'contacts/';
+	const url = BASE_URL + 'contact';
 
-	const { register, handleSubmit, errors, reset } = useForm({
+	// const { register, handleSubmit, errors, reset } = useForm({
+	// 	resolver: yupResolver(schema),
+	// });
+
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm({
 		resolver: yupResolver(schema),
 	});
 
