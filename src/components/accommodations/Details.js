@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
 import Heading from "../common/Heading";
-import Enquiry from "./enquiry/Enquiry";
+import Enquiry from "./enquiry/AccEnquiry";
 // import Breadcrumb from "react-bootstrap/Breadcrumb"
 
 export default function Details() {

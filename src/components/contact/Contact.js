@@ -1,8 +1,8 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { Helmet } from 'react-helmet-async';
-import ContactForm from './content/ContactForm';
-import ContactInfo from './content/ContactInfo';
+import ContactForm from './content-contact/ContactForm';
+import ContactInfo from './content-contact/ContactInfo';
 
 export default function Contact() {
 	return (

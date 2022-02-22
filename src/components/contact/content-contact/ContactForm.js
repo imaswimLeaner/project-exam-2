@@ -46,11 +46,9 @@ const schema = yup.object().shape({
 export default function ContactForm() {
 	const [sending, setSending] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
-	const url = BASE_URL + 'contact';
+	const url = BASE_URL + 'messages';
 
-	// const { register, handleSubmit, errors, reset } = useForm({
-	// 	resolver: yupResolver(schema),
-	// });
+	
 
 	const {
 		register,
@@ -84,7 +82,7 @@ export default function ContactForm() {
 					<Form.Control
 						name="first_name"
 						placeholder="First Name"
-						ref={register}
+						{...register('first_name')}
 					/>
 					{errors.first_name && (
 						<FormError>{errors.first_name.message}</FormError>
@@ -95,8 +93,8 @@ export default function ContactForm() {
 					<Form.Label>Last Name</Form.Label>
 					<Form.Control
 						name="last_name"
-						placeholder="Last Name"
-						ref={register}
+						placeholder="last_name"
+						{...register('last_name')}
 					/>
 					{errors.last_name && (
 						<FormError>{errors.last_name.message}</FormError>
@@ -108,16 +106,14 @@ export default function ContactForm() {
 					<Form.Control
 						name="email_address"
 						placeholder="Email Address"
-						ref={register}
+						{...register('email_address')}
 					/>
-					{errors.email_address && (
-						<FormError>{errors.email_address.message}</FormError>
-					)}
+					{errors.email_address && <FormError>{errors.email_address.message}</FormError>}
 				</Form.Group>
 
 				<Form.Group>
 					<Form.Label>Subject</Form.Label>
-					<Form.Control name="subject" ref={register} as="select">
+					<Form.Control name="subject" {...register('subject')} as="select">
 						<option value="">Subject..</option>
 						<option value="Booking">Booking</option>
 						<option value="Payment">Payment</option>
@@ -132,7 +128,7 @@ export default function ContactForm() {
 					<Form.Control
 						name="message"
 						placeholder="Your message.."
-						ref={register}
+						{...register('message')}
 						as="textarea"
 						rows={5}
 					/>

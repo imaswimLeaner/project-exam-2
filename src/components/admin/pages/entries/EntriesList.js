@@ -1,4 +1,6 @@
-import { useState, useEffect, React} from "react";
+import { useState, useEffect, } from "react";
+import React from 'react';
+
 import axios from "axios";
 import Row from "react-bootstrap/Row";
 import { BASE_URL } from "../../../../constants/api";
@@ -10,7 +12,7 @@ export default function EnquiriesList() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = BASE_URL + "contacts";
+  const url = BASE_URL + "messages";
 
   useEffect(function () {
     async function getEntries() {

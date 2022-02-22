@@ -16,7 +16,7 @@ import Alert from 'react-bootstrap/Alert';
  
 
 const schema = yup.object().shape({
-	username: yup.string().required('Please enter your username'),
+	identifier: yup.string().required('Please enter your username'),
 	password: yup.string().required('Please enter your password'),
 });
 
@@ -65,14 +65,13 @@ export default function LoginForm() {
 			<Form className="login__content__form" onSubmit={handleSubmit(onSubmit)}>
 				<fieldset disabled={submitting}>
 					<Form.Group>
-						
 						<Form.Control
-							name="username"
+							name="identifier"
 							placeholder="Username"
-							{...register('username')}
+							{...register('identifier')}
 						/>
-						{errors.username && (
-							<FormError>{errors.username.message}</FormError>
+						{errors.identifier && (
+							<FormError>{errors.identifier.message}</FormError>
 						)}
 					</Form.Group>
 

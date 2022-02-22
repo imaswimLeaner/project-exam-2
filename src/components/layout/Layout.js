@@ -35,15 +35,17 @@ export default function Layout() {
 							<Route path="/contact" element={<Contact />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/admin" element={<Admin />} />
-							
-						  	<Route
+
+							<Route
 								path="/admin/enquiries"
-								component={<Enquiries />}
+								exact="true"
+								element={<Enquiries />}
 							/>
-							<Route path="/admin/entries" component={<Entries />} />
+							<Route path="/admin/entries" exact="true" element={<Entries />} />
 							<Route
 								path="/admin/add-establishment"
-								component={<AddPage />}
+								exact="true"
+								element={<AddPage />}
 							/>
 						</Routes>
 					</div>

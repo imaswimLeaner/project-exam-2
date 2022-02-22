@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Container from 'react-bootstrap/Container';
 import Heading from '../../../common/Heading';
-import AddEstab from './AddEstab';
+import AddAccommodation from './AddAccommodation';
 
 export default function AddPage() {
 	return (
@@ -17,7 +17,7 @@ export default function AddPage() {
 				</div>
 			</div>
 			<Container className="add-page">
-				<AddEstab />
+				<AddAccommodation />
 			</Container>
 		</>
 	);

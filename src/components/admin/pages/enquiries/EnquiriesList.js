@@ -51,7 +51,7 @@ export default function EnquiriesList() {
               email_address,
               check_in,
               check_out,
-              establishment_name,
+              establish_name,
               created_at,
             } = enquiry;
 
@@ -63,7 +63,7 @@ export default function EnquiriesList() {
                 email_address={email_address}
                 check_in={check_in}
                 check_out={check_out}
-                establishment_name={establishment_name}
+                establish_name={establish_name}
                 created_at={created_at}
               />
             );

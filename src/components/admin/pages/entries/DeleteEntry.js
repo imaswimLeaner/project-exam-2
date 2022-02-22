@@ -1,4 +1,5 @@
-import { useState, React } from "react";
+import { useState, } from "react";
+import React from 'react';
 import PropTypes from "prop-types";
 import useAxios from "../../../../hooks/useAxios";
 
@@ -7,7 +8,7 @@ export default function DeleteEntry({ id }) {
 
   const http = useAxios();
 
-  const url = `contacts/${id}`;
+  const url = `messages/${id}`;
 
   async function handleDelete() {
     const confirmDelete = window.confirm("Delete this entry?");
