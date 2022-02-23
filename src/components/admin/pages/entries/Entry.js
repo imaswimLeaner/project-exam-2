@@ -16,44 +16,53 @@ export default function Entry({
   created_at,
 }) {
   return (
-    <Accordion className="entries__results__row__acc">
-      <Card className="entries__results__row__acc__card">
-        <Accordion.Toggle
-          className="entries__results__row__acc__card__header"
-          as={Card.Header}
-          eventKey={id}
-        >
-          <p>Subject: {subject}</p>
-          <p>Sent: {dateFormat(created_at, "dd.mm.yyyy")}</p>
-        </Accordion.Toggle>
-        <Accordion.Collapse eventKey={id}>
-          <Card.Body className="entries__results__row__acc__card__body">
-            <Heading size="3" content="First name:" />
-            <p>{first_name}</p>
+		<Accordion
+			className="entries__results__row__acc"
+			defaultActiveKey="0"
+			flush
+		>
+			<Card className="entries__results__row__acc__card">
+				<Accordion.Header
+					className="entries__results__row__acc__card__header"
+					as={Card.Header}
+					eventKey={id}
+				>
+					<p>NAME : {first_name}/ </p>
+					<p>
+						<strong>Subject : {subject} </strong>
+					</p>
+					<p>
+						<i>/Sent: {dateFormat(created_at, 'dd.mm.yyyy')} </i>
+					</p>
+				</Accordion.Header>
+				<Accordion.Body eventKey={id}>
+					<Card.Body className="entries__results__row__acc__card__body">
+						<Heading size="3" content="First name:" />
+						<p>{first_name}</p>
 
-            <Heading size="3" content="Last name:" />
-            <p>{last_name}</p>
+						<Heading size="3" content="Last name:" />
+						<p>{last_name}</p>
 
-            <Heading size="3" content="Email address:" />
-            <p>{email_address}</p>
+						<Heading size="3" content="Email address:" />
+						<p>{email_address}</p>
 
-            <Heading size="3" content="Subject:" />
-            <p>{subject}</p>
+						<Heading size="3" content="Subject:" />
+						<p>{subject}</p>
 
-            <Heading size="3" content="Message:" />
-            <p>{message}</p>
+						<Heading size="3" content="Message:" />
+						<p>{message}</p>
 
-            <div className="btns">
-              <a className="btn btns__accept" href={`mailto:${email_address}`}>
-                Reply
-              </a>
-              <DeleteEntry id={id} />
-            </div>
-          </Card.Body>
-        </Accordion.Collapse>
-      </Card>
-    </Accordion>
-  );
+						<div className="btns">
+							<a className="btn btns__accept" href={`mailto:${email_address}`}>
+								Reply
+							</a>
+							<DeleteEntry id={id} />
+						</div>
+					</Card.Body>
+				</Accordion.Body>
+			</Card>
+		</Accordion>
+	);
 }
 
 Entry.propTypes = {

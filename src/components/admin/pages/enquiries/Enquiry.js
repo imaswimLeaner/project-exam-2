@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import DeleteEnquiry from "./DeleteEnquiry";
 import Heading from "../../../common/Heading";
 
+
 export default function Enquiry({
   id,
   full_name,
@@ -16,13 +17,27 @@ export default function Enquiry({
   created_at,
 }) {
   return (
-		<Accordion className="enquiries__results__row__acc">
+		<Accordion
+			className="enquiries__results__row__acc"
+			defaultActiveKey="0"
+			flush
+		>
 			<Card className="enquiries__results__row__acc__card">
-				<Accordion.Toggle	className="enquiries__results__row__acc__card__header"	as={Card.Header}		eventKey={id}	>
-					<p>Establishment: {establish_name}</p>
-					<p>Sent: {dateFormat(created_at, 'dd.mm.yyyy')}</p>
-				</Accordion.Toggle>
-				<Accordion.Collapse eventKey={id}>
+				<Accordion.Header
+					className="enquiries__results__row__acc__card__header"
+					as={Card.Header}
+					eventKey={id}
+				>
+					
+					<p>
+						<strong>Establishment : {establish_name} </strong>
+					</p>
+
+					<p>
+						<i>Sent : {dateFormat(created_at, 'dd.mm.yyyy')} </i>
+					</p>
+				</Accordion.Header>
+				<Accordion.Body eventKey={id}>
 					<Card.Body className="enquiries__results__row__acc__card__body">
 						<Heading size="3" content="Full name of client:" />
 						<p>{full_name}</p>
@@ -43,7 +58,7 @@ export default function Enquiry({
 							<DeleteEnquiry id={id} />
 						</div>
 					</Card.Body>
-				</Accordion.Collapse>
+				</Accordion.Body>
 			</Card>
 		</Accordion>
 	);

@@ -36,7 +36,7 @@ export default function EnquiriesList() {
   if (error)
     return (
       <div className="error">
-        An error occured. Please contact the main office for more info.
+        An error ccured. Please contact the main office for more info.
       </div>
     );
 

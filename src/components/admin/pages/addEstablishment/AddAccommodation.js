@@ -67,7 +67,7 @@ export default function AddAccommodation() {
     data.status = "publish";
 
     try {
-      const response = await http.post("establishments", formData);
+      const response = await http.post("bookings", formData);
       console.log("response", response.data);
       setSubmitted(true);
     } catch (error) {
