@@ -9,20 +9,21 @@ import FormError from "../../../common/FormError";
 import useAxios from "../../../../hooks/useAxios";
 
 const schema = yup.object().shape({
-  hotel: yup.boolean(),
-  bed_and_breakfast: yup.boolean(),
-  guesthouse: yup.boolean(),
-  parking_available: yup.boolean(),
-  breakfast_included: yup.boolean(),
-  restaurant: yup.boolean(),
-  pet_friendly: yup.boolean(),
-  bar: yup.boolean(),
-  name: yup.string().required("Establishment name is required"),
-  price: yup
-    .number()
-    .typeError("Price is required")
-    .required("Price is required"),
-  description: yup.string().required("Description is required"),
+	hotel: yup.boolean(),
+	bed_and_breakfast: yup.boolean(),
+	guesthouse: yup.boolean(),
+	parking_available: yup.boolean(),
+	breakfast_included: yup.boolean(),
+	restaurant: yup.boolean(),
+	pet_friendly: yup.boolean(),
+	bar: yup.boolean(),
+	name: yup.string().required('Establishment name is required'),
+	price: yup
+		.number()
+		.typeError('Price is required')
+		.required('Price is required'),
+	description: yup.string().required('Description is required'),
+	location: yup.string().required('Location is required'),
 });
 
 export default function AddAccommodation() {
@@ -48,22 +49,23 @@ export default function AddAccommodation() {
 
     const formData = new FormData();
     formData.append(
-      "data",
-      JSON.stringify({
-        hotel: data.hotel,
-        bed_and_breakfast: data.bed_and_breakfast,
-        guesthouse: data.guesthouse,
-        parking_available: data.parking_available,
-        breakfast_included: data.breakfast_included,
-        restaurant: data.restaurant,
-        pet_friendly: data.pet_friendly,
-        bar: data.bar,
-        name: data.name,
-        price: data.price,
-        description: data.description,
-      })
-    );
-    formData.append("files.image", data.files);
+			'data',
+			JSON.stringify({
+				hotel: data.hotel,
+				bed_and_breakfast: data.bed_and_breakfast,
+				guesthouse: data.guesthouse,
+				parking_available: data.parking_available,
+				breakfast_included: data.breakfast_included,
+				restaurant: data.restaurant,
+				pet_friendly: data.pet_friendly,
+				bar: data.bar,
+				name: data.name,
+				price: data.price,
+				description: data.description,
+				location: data.location,
+			})
+		);
+    formData.append("files.image", data.files[0]);
     data.status = "publish";
 
     try {
@@ -88,12 +90,13 @@ export default function AddAccommodation() {
 			)}
 			<Form className="add-page__form" onSubmit={handleSubmit(onSubmit)}>
 				<div className="add-page__form__group--left">
-					<Form.Group>
-						<Form.File
+					<Form.Group controlId="formFile" className="mb-3">
+						<Form.Label>Add Image (required)</Form.Label>
+					  	<Form.Control
+							type="file"
 							name="files"
 							label="Add image"
 							{...register('files')}
-							
 						/>
 					</Form.Group>
 					<Form.Group>
@@ -165,6 +168,14 @@ export default function AddAccommodation() {
 							{...register('name')}
 						/>
 						{errors.name && <FormError>{errors.name.message}</FormError>}
+
+						<Form.Label>Location</Form.Label>
+						<Form.Control
+							name="Location"
+							placeholder="Location"
+							{...register('location')}
+						/>
+						{errors.location && <FormError>{errors.location.message}</FormError>}
 					</Form.Group>
 
 					<Form.Group>
