@@ -25,7 +25,7 @@ export default function Entry({
 				<Accordion.Header
 					className="entries__results__row__acc__card__header"
 					as={Card.Header}
-					eventKey={id}
+					eventkey={id}
 				>
 					<p>NAME : {first_name}/ </p>
 					<p>

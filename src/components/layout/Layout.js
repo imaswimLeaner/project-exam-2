@@ -14,7 +14,7 @@ import Admin from "../admin/Admin";
 import Enquiries from "../admin/pages/enquiries/Enquiries";
 import Entries from "../admin/pages/entries/Entries";
 import AddPage from "../admin/pages/addEstablishment/AddPage";
-// import ProtectedRoute from '../route/ProtectedRoute';
+
 
 
 export default function Layout() {
