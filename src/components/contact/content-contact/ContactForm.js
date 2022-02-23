@@ -93,7 +93,7 @@ export default function ContactForm() {
 					<Form.Label>Last Name</Form.Label>
 					<Form.Control
 						name="last_name"
-						placeholder="last_name"
+						placeholder="Last name"
 						{...register('last_name')}
 					/>
 					{errors.last_name && (
