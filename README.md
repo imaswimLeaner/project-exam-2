@@ -1,3 +1,8 @@
+username: admin@admin.com   
+passwork: paSS1234
+
+
+
 Project Exam 2
 
 There are two options with this Project Exam. You need to only choose one and please follow the deliveries carefully.
