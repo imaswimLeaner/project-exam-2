@@ -26,7 +26,7 @@ export default function Enquiry({
 				<Accordion.Header
 					className="enquiries__results__row__acc__card__header"
 					as={Card.Header}
-					eventkey={id}
+					
 				>
 					
 					<p>
